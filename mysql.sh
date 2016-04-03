@@ -3,14 +3,16 @@
 set -e
 
 # Edit the following three values to your liking:
-MYSQL_USER="coreosuser"
-MYSQL_DATABASE="enterpriseregistrydb"
-MYSQL_CONTAINER_NAME="mysql"
+MYSQL_USER="jhana_dev"
+MYSQL_DATABASE="jhana_dev"
+MYSQL_CONTAINER_NAME="jhana_mysql"
 
 # Do not edit these values:
 # (creates a 32 char password for the MySQL root user and the Enterprise Registery DB user)
-MYSQL_ROOT_PASSWORD=$(cat /dev/urandom | LC_CTYPE=C tr -dc 'a-zA-Z0-9' | fold -w 32 | sed 1q)
-MYSQL_PASSWORD=$(cat /dev/urandom | LC_CTYPE=C tr -dc 'a-zA-Z0-9' | fold -w 32 | sed 1q)
+MYSQL_ROOT_PASSWORD="jhana_root"
+#MYSQL_ROOT_PASSWORD=$(cat /dev/urandom | LC_CTYPE=C tr -dc 'a-zA-Z0-9' | fold -w 32 | sed 1q)
+#MYSQL_PASSWORD=$(cat /dev/urandom | LC_CTYPE=C tr -dc 'a-zA-Z0-9' | fold -w 32 | sed 1q)
+MYSQL_PASSWORD="jhana_pass"
 
 echo "Start the Oracle MySQL container:"
 # It will provision a blank database for the Enterprise Registery upon first start.
